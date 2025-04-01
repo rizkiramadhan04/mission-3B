@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./src/output.css" rel="stylesheet">
+  <style>
+    body {
+        background-color: #181A1C;
+    }
+  </style>
+</head>
+<body>
+
+    <!-- navbar -->
+        <header class="bg-[#22282A]">
+            <nav class="mx-auto flex max-w-7xl items-start p-6 lg:px-8" aria-label="Global">
+                <div class="flex">
+                    <a href="#" class="-m-1.5 mr-5 p-1.5  -mt-2.5">
+                    <span class="sr-only">Your Company</span>
+                    <img class="h-8 w-auto" src="./images/logo-navbar.png" alt="">
+                    </a>
+                </div>
+                <div class="hidden lg:flex lg:gap-x-12">
+                    <a href="#" class="text-sm/6 font-semibold text-white">Series</a>
+                    <a href="#" class="text-sm/6 font-semibold text-white">Film</a>
+                    <a href="#" class="text-sm/6 font-semibold text-white">Daftar Saya</a>
+                </div>
+                <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+                    <a href="#" class="text-sm/6 font-semibold text-white flex">
+                        <div class="rounded-full w-7 mr-3">
+                            <img src="./images/user.png" class="w-auto" alt="user_logo">
+                        </div>
+                        <span aria-hidden="true mt-auto">
+                            <img src="./images/angel-down.png" class="w-3 my-2.5" alt="down">
+                        </span>
+                    </a>
+                </div>
+            </nav>
+            <!-- Mobile menu, show/hide based on menu open state. -->
+            <div class="lg:hidden" role="dialog" aria-modal="true">
+            <!-- Background backdrop, show/hide based on slide-over state. -->
+            <div class="fixed inset-0 z-10"></div>
+            <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+                <div class="flex items-center justify-between">
+                <a href="#" class="-m-1.5 p-1.5">
+                    <span class="sr-only">Your Company</span>
+                    <img class="h-8 w-auto" src="./images/logo-navbar.png" alt="">
+                </a>
+                <button type="button" class="-m-2.5 rounded-md p-2.5 text-white">
+                    <span class="sr-only">Close menu</span>
+                    <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                    </svg>
+                </button>
+                </div>
+                <div class="mt-6 flow-root">
+                <div class="-my-6 divide-y divide-white">
+                    <div class="space-y-2 py-6">
+                        <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white">Series</a>
+                        <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white">Film</a>
+                        <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white">Daftar Saya</a>
+                    </div>
+                    <div class="py-6">
+                        <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-white hover:bg-white">Log in</a>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </header>
+      
+    <!-- navbar -->
+
+    <!-- hero section -->
+
+    <section class="hero_section">
+        <div class="w-full bg-[url(../images/hero_image.png)] bg-cover px-30  pt-70  pb-15">
+            <div class="lg:justify-left w-1/2 text-white">
+                <h2 class="text-4xl py-3 font-semi-bold">Duty After School</h2>
+                <p class="justify-between">
+                    Sebuah benda tak dikenal mengambil alih dunia. Dalam keputusasaan, Departemen Pertahanan mulai merekrut lebih banyak tentara, termasuk siswa sekolah menengah. Mereka pun segera menjadi pejuang garis depan dalam perang.
+                </p>
+            </div>
+
+            <div class="flex justify-between mt-5">
+                <div class="button-left justify-items-start flex gap-3">
+                    <button class="w-20 h-9 hover:cursor-pointer bg-[#0F1E93] rounded-full text-white  text-sm">Mulai</button>
+                    <button class="w-30 h-9 hover:cursor-pointer bg-gray-700/50 rounded-full text-white text-sm">Selengkapnya!</button>
+                    <button class="w-10 h-9 hover:cursor-pointer bg-transparent rounded-full text-white text-sm outline-1 outline-white  ">18 +</button>
+                </div>
+                <div class="button-right justify-items-end">
+                    <button class="w-10 h-9 hover:cursor-pointer rounded-full bg-transparent text-white font-semibold outline-white outline-1 justify-items-center">
+                        <img src="./images/volume-off.png" class="w-5" alt="volume-off">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- hero section -->
+
+  
+
+</body>
+</html>

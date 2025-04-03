@@ -1,346 +1,183 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="./src/output.css" rel="stylesheet">
-  <style>
-    body {
-        background-color: #181A1C;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="./src/output.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #181A1C;
+        }
+    </style>
 </head>
-<body>
+<body class="text-white">
 
-    <!-- navbar -->
-        <header class="bg-[#22282A]">
-            <nav class="mx-auto flex max-w-7xl items-start p-6 lg:px-8" aria-label="Global">
-                <div class="flex">
-                    <a href="#" class="-m-1.5 mr-5 p-1.5  -mt-2.5">
-                    <span class="sr-only">Your Company</span>
-                    <img class="h-8 w-auto" src="./images/logo-navbar.png" alt="">
-                    </a>
-                </div>
-                <div class="hidden lg:flex lg:gap-x-12">
-                    <a href="#" class="text-sm/6 font-semibold text-white">Series</a>
-                    <a href="#" class="text-sm/6 font-semibold text-white">Film</a>
-                    <a href="#" class="text-sm/6 font-semibold text-white">Daftar Saya</a>
-                </div>
-                <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-                    <a href="#" class="text-sm/6 font-semibold text-white flex">
-                        <div class="rounded-full w-7 mr-3">
-                            <img src="./images/user.png" class="w-auto" alt="user_logo">
-                        </div>
-                        <span aria-hidden="true mt-auto">
-                            <img src="./images/angel-down.png" class="w-3 my-2.5" alt="down">
-                        </span>
-                    </a>
-                </div>
-            </nav>
-            <!-- Mobile menu, show/hide based on menu open state. -->
-            <div class="lg:hidden" role="dialog" aria-modal="true">
-            <!-- Background backdrop, show/hide based on slide-over state. -->
-            <div class="fixed inset-0 z-10"></div>
-            <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-                <div class="flex items-center justify-between">
-                <a href="#" class="-m-1.5 p-1.5">
-                    <span class="sr-only">Your Company</span>
-                    <img class="h-8 w-auto" src="./images/logo-navbar.png" alt="">
+    <!-- Navbar -->
+    <header class="bg-[#22282A] fixed w-full top-0 z-50">
+        <nav class="container mx-auto flex items-center justify-between p-4 lg:px-8">
+            <!-- Menu (Desktop) -->
+            <div class="hidden lg:flex items-center space-x-8">
+                <!-- Logo (Pusat) -->
+                <a href="#" class="left-1/2 transform -translate-x-1/2 flex items-center">
+                    <img src="./images/logo-navbar.png" class="h-8" alt="Logo">
                 </a>
-                <button type="button" class="-m-2.5 rounded-md p-2.5 text-white">
-                    <span class="sr-only">Close menu</span>
-                    <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                    </svg>
-                </button>
-                </div>
-                <div class="mt-6 flow-root">
-                <div class="-my-6 divide-y divide-white">
-                    <div class="space-y-2 py-6">
-                        <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white">Series</a>
-                        <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white">Film</a>
-                        <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white">Daftar Saya</a>
-                    </div>
-                    <div class="py-6">
-                        <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-white hover:bg-white">Log in</a>
-                    </div>
-                </div>
-                </div>
+                <a href="#" class="text-sm font-semibold text-white">Series</a>
+                <a href="#" class="text-sm font-semibold text-white">Film</a>
+                <a href="#" class="text-sm font-semibold text-white">Daftar Saya</a>
             </div>
+
+            <!-- User Profile (Kanan) -->
+            <div class="hidden lg:flex items-center space-x-3">
+                <img src="./images/user.png" class="w-7 rounded-full">
+                <img src="./images/angel-down.png" class="w-3">
             </div>
-        </header>
-      
-    <!-- navbar -->
 
-    <!-- hero section -->
+            <!-- Mobile Menu Button -->
+            <button id="menu-toggle" class="lg:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-[#22282A] absolute w-full mt-1 p-4">
+            <a href="#" class="block py-2 text-sm font-semibold">Series</a>
+            <a href="#" class="block py-2 text-sm font-semibold">Film</a>
+            <a href="#" class="block py-2 text-sm font-semibold">Daftar Saya</a>
+            <hr class="border-gray-600 my-2">
+            <a href="#" class="flex items-center space-x-3 py-2">
+                <img src="./images/user.png" class="w-7 rounded-full">
+                <span>Profil</span>
+            </a>
+        </div>
+    </header>
 
-    <section class="hero_section">
-        <div class="w-full bg-[url(../images/hero_image.png)] bg-cover px-30  pt-70  pb-15">
-            <div class="lg:justify-left w-1/2 text-white">
-                <h2 class="text-4xl py-3 font-semi-bold">Duty After School</h2>
-                <p class="justify-between">
-                    Sebuah benda tak dikenal mengambil alih dunia. Dalam keputusasaan, Departemen Pertahanan mulai merekrut lebih banyak tentara, termasuk siswa sekolah menengah. Mereka pun segera menjadi pejuang garis depan dalam perang.
+
+    <!-- Hero Section -->
+    <section class="relative bg-cover bg-center h-screen flex items-center" 
+        style="background-image: url('./images/hero_image.png');">
+        <div class="container mx-auto px-6 lg:px-20 text-white">
+            <div class="max-w-xl">
+                <h1 class="text-4xl font-semibold mb-4">Duty After School</h1>
+                <p class="mb-6">
+                    Sebuah benda tak dikenal mengambil alih dunia. Dalam keputusasaan, Departemen Pertahanan mulai merekrut lebih banyak tentara, termasuk siswa sekolah menengah.
                 </p>
-            </div>
-
-            <div class="flex justify-between mt-5">
-                <div class="button-left justify-items-start flex gap-3">
-                    <button class="w-20 h-9 hover:cursor-pointer bg-[#0F1E93] rounded-full text-white  text-sm">Mulai</button>
-                    <button class="w-30 h-9 hover:cursor-pointer bg-gray-700/50 rounded-full text-white text-sm">Selengkapnya!</button>
-                    <button class="w-10 h-9 hover:cursor-pointer bg-transparent rounded-full text-white text-sm outline-1 outline-white  ">18 +</button>
-                </div>
-                <div class="button-right justify-items-end">
-                    <button class="w-10 h-9 hover:cursor-pointer rounded-full bg-transparent text-white font-semibold outline-white outline-1 justify-items-center">
-                        <img src="./images/volume-off.png" class="w-5" alt="volume-off">
-                    </button>
+                <div class="flex space-x-4">
+                    <button class="px-6 py-2 bg-[#0F1E93] rounded-full">Mulai</button>
+                    <button class="px-6 py-2 bg-gray-700/50 rounded-full">Selengkapnya!</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- hero section -->
-
-    <!-- next film section -->
-
-    <section class="next_film_section px-25 h-65">
-        <div class="header my-3 mb-5 pl-5">
-            <h2 class="text-2xl font-bold text-white">Melanjutkan Nonton Film</h2>
-        </div>
-        <div class="content">
-            <div class="snap-x snap-mandatory flex gap-4">
-                <div class="float-start my-auto -mr-8 ml-0 z-10 hover:cursor-pointer">
-                    <div class="right-arrow bg-gray-800 w-10 h-10 rounded-full flex justify-center">
-                        <span class="text-lg text-white my-auto">&larr;</span>
-                    </div>
-                </div>
-                <div class="snap-center snap-always hover:cursor-pointer">
-                  <img src="./images/next-film/next-film-1.png" class="w-75 rounded-lg" />
-                </div>
-                <div class="snap-center snap-always hover:cursor-pointer">
-                  <img src="./images/next-film/next-film-2.png" class="w-75 rounded-lg" />
-                </div>
-                <div class="snap-center snap-always hover:cursor-pointer">
-                  <img src="./images/next-film/next-film-3.png" class="w-75 rounded-lg" />
-                </div>
-                <div class="snap-center snap-always hover:cursor-pointer">
-                  <img src="./images/next-film/next-film-4.png" class="w-75 rounded-lg" />
-                </div>
-                <div class="float-end my-auto -ml-8.5 hover:cursor-pointer">
-                    <div class="right-arrow bg-gray-800 w-10 h-10 rounded-full flex justify-center">
-                        <span class="text-lg text-white my-auto">&rarr;</span>
-                    </div>
-                </div>
-            </div>
+    <!-- Section: Melanjutkan Nonton -->
+    <section class="container mx-auto px-6 mt-12">
+        <h2 class="text-2xl font-bold mb-4">Melanjutkan Nonton Film</h2>
+        <div class="flex space-x-4 overflow-x-scroll scrollbar-hide">
+            <img src="./images/next-film/next-film-1.png" class="w-74 rounded-lg">
+            <img src="./images/next-film/next-film-2.png" class="w-74 rounded-lg">
+            <img src="./images/next-film/next-film-3.png" class="w-74 rounded-lg">
+            <img src="./images/next-film/next-film-4.png" class="w-74 rounded-lg">
         </div>
     </section>
 
-    <!-- next film section -->
-
-    <!-- rating film section -->
-
-    <section class="rating_film_section px-25 h-120">
-        <div class="header my-3 mb-5 pl-5">
-            <h2 class="text-2xl font-bold text-white">Top Rating Film dan Series Hari ini</h2>
-        </div>
-        <div class="content mx-0">
-            <div class="snap-x snap-mandatory flex">
-                <div class="float-start my-auto -mr-5 ml-0 z-10 hover:cursor-pointer">
-                    <div class="right-arrow bg-gray-800 w-10 h-10 rounded-full flex justify-center">
-                        <span class="text-lg text-white my-auto">&larr;</span>
-                    </div>
-                </div>
-                <div class="snap-center snap-always hover:cursor-pointer">
-                    <div class="absolute bg-[#0F1E93] w-auto z-10 m-2 px-2 pb-1 rounded-full">
-                        <span class="text-white text-xs text-center">Episode Baru</span>
-                    </div>
-                  <img src="./images/rating-film/rating-film-1.png" class="w-55 rounded-lg mr-7" />
-                </div>
-                <div class="snap-center snap-always hover:cursor-pointer">
-                  <img src="./images/rating-film/rating-film-2.png" class="w-55 rounded-lg mr-7" />
-                </div>
-                <div class="snap-center snap-always hover:cursor-pointer">
-                  <img src="./images/rating-film/rating-film-3.png" class="w-55 rounded-lg mr-7" />
-                </div>
-                <div class="snap-center snap-always hover:cursor-pointer">
-                    <div class="absolute bg-[#0F1E93] w-auto z-10 m-2 px-2 pb-1 rounded-full">
-                        <span class="text-white text-xs text-center">Episode Baru</span>
-                    </div>
-                  <img src="./images/rating-film/rating-film-4.png" class="w-55 rounded-lg mr-7" />
-                </div>
-                <div class="snap-center snap-always hover:cursor-pointer">
-                  <img src="./images/rating-film/rating-film-5.png" class="w-55 rounded-lg mr-0" />
-                </div>
-                <div class="float-end my-auto -ml-5.5 hover:cursor-pointer">
-                    <div class="right-arrow bg-gray-800 w-10 h-10 rounded-full flex justify-center">
-                        <span class="text-lg text-white my-auto">&rarr;</span>
-                    </div>
-                </div>
-            </div>
+    <!-- Section: Top Rating -->
+    <section class="container mx-auto px-6 mt-12">
+        <h2 class="text-2xl font-bold mb-4">Top Rating Film dan Series Hari ini</h2>
+        <div class="flex space-x-4 overflow-x-scroll scrollbar-hide gap-4">
+            <img src="./images/rating-film/rating-film-1.png" class="w-55 rounded-lg">
+            <img src="./images/rating-film/rating-film-2.png" class="w-55 rounded-lg">
+            <img src="./images/rating-film/rating-film-3.png" class="w-55 rounded-lg">
+            <img src="./images/rating-film/rating-film-4.png" class="w-55 rounded-lg">
+            <img src="./images/rating-film/rating-film-5.png" class="w-55 rounded-lg">
         </div>
     </section>
 
-    <!-- rating film section -->
-
-    <!-- top film section -->
-
-    <section class="top_film_section px-25 h-120">
-        <div class="header my-3 mb-5 pl-5">
-            <h2 class="text-2xl font-bold text-white">Top Tranding Film dan Series Hari ini</h2>
-        </div>
-        <div class="content mx-0">
-            <div class="snap-x snap-mandatory flex">
-                <div class="float-start my-auto -mr-5 ml-0 z-10 hover:cursor-pointer">
-                    <div class="right-arrow bg-gray-800 w-10 h-10 rounded-full flex justify-center">
-                        <span class="text-lg text-white my-auto">&larr;</span>
-                    </div>
-                </div>
-                <div class="snap-center snap-always hover:cursor-pointer relative">
-                    <div class="absolute bg-[#B71F1D] w-7 h-12 z-10 m-2 mt-0 px-2.5 pb-1 rounded-tr-lg rounded-bl-lg right-8 top-0 flex flex-col items-center justify-center">
-                        <span class="text-white text-xs text-center">Top</span>
-                        <span class="text-white text-xs text-center">10</span>
-                    </div>
-                    <img src="./images/top-film/top-film-1.png" class="w-55 rounded-lg mr-7" />
-                </div>
-                <div class="snap-center snap-always hover:cursor-pointer relative">
-                    <div class="absolute bg-[#B71F1D] w-7 h-12 z-10 m-2 mt-0 px-2.5 pb-1 rounded-tr-lg rounded-bl-lg right-8 top-0 flex flex-col items-center justify-center">
-                        <span class="text-white text-xs text-center">Top</span>
-                        <span class="text-white text-xs text-center">10</span>
-                    </div>
-                  <img src="./images/top-film/top-film-2.png" class="w-55 rounded-lg mr-7" />
-                </div>
-                <div class="snap-center snap-always hover:cursor-pointer relative">
-                    <div class="absolute bg-[#B71F1D] w-7 h-12 z-10 m-2 mt-0 px-2.5 pb-1 rounded-tr-lg rounded-bl-lg right-8 top-0 flex flex-col items-center justify-center">
-                        <span class="text-white text-xs text-center">Top</span>
-                        <span class="text-white text-xs text-center">10</span>
-                    </div>
-                  <img src="./images/top-film/top-film-3.png" class="w-55 rounded-lg mr-7" />
-                </div>
-                <div class="snap-center snap-always hover:cursor-pointer relative">
-                    <div class="absolute bg-[#B71F1D] w-7 h-12 z-10 m-2 mt-0 px-2.5 pb-1 rounded-tr-lg rounded-bl-lg right-8 top-0 flex flex-col items-center justify-center">
-                        <span class="text-white text-xs text-center">Top</span>
-                        <span class="text-white text-xs text-center">10</span>
-                    </div>
-                  <img src="./images/top-film/top-film-4.png" class="w-55 rounded-lg mr-7" />
-                </div>
-                <div class="snap-center snap-always hover:cursor-pointer relative">
-                    <div class="absolute bg-[#B71F1D] w-7 h-12 z-10 m-2 mt-0 px-2.5 pb-1 rounded-tr-lg rounded-bl-lg right-2 top-0 flex flex-col items-center justify-center">
-                        <span class="text-white text-xs text-center">Top</span>
-                        <span class="text-white text-xs text-center">10</span>
-                    </div>
-                  <img src="./images/top-film/top-film-5.png" class="w-55 rounded-lg mr-0" />
-                </div>
-                <div class="float-end my-auto -ml-5.5 z-10 hover:cursor-pointer">
-                    <div class="right-arrow bg-gray-800 w-10 h-10 rounded-full flex justify-center">
-                        <span class="text-lg text-white my-auto">&rarr;</span>
-                    </div>
-                </div>
-            </div>
+    <!-- Section: Tranding Film -->
+    <section class="container mx-auto px-6 mt-12">
+        <h2 class="text-2xl font-bold mb-4">Film Tranding</h2>
+        <div class="flex space-x-4 overflow-x-scroll scrollbar-hide gap-4">
+            <img src="./images/top-film/top-film-1.png" class="w-55 rounded-lg">
+            <img src="./images/top-film/top-film-2.png" class="w-55 rounded-lg">
+            <img src="./images/top-film/top-film-3.png" class="w-55 rounded-lg">
+            <img src="./images/top-film/top-film-4.png" class="w-55 rounded-lg">
+            <img src="./images/top-film/top-film-5.png" class="w-55 rounded-lg">
         </div>
     </section>
 
-    <!-- top film section -->
-
-    <!-- new film section -->
-
-    <section class="new_film_section px-25 h-120">
-        <div class="header my-3 mb-5 pl-5">
-            <h2 class="text-2xl font-bold text-white">Rilis Terbaru</h2>
-        </div>
-        <div class="content mx-0">
-            <div class="snap-x snap-mandatory flex">
-                <div class="float-start my-auto -mr-5 ml-0 z-10 hover:cursor-pointer">
-                    <div class="right-arrow bg-gray-800 w-10 h-10 rounded-full flex justify-center">
-                        <span class="text-lg text-white my-auto">&larr;</span>
-                    </div>
-                </div>
-                <div class="snap-center snap-always hover:cursor-pointer relative">
-                    <div class="absolute bg-[#B71F1D] w-7 h-12 z-10 m-2 mt-0 px-2.5 pb-1 rounded-tr-lg rounded-bl-lg right-8 top-0 flex flex-col items-center justify-center">
-                        <span class="text-white text-xs text-center">Top</span>
-                        <span class="text-white text-xs text-center">10</span>
-                    </div>
-                    <img src="./images/new-film/new-film-1.png" class="w-55 rounded-lg mr-7" />
-                </div>
-                <div class="snap-center snap-always hover:cursor-pointer relative">
-                    <div class="absolute bg-[#0F1E93] w-auto z-10 m-2 px-2 pb-1 rounded-full">
-                        <span class="text-white text-xs text-center">Episode Baru</span>
-                    </div>
-                  <img src="./images/new-film/new-film-2.png" class="w-55 rounded-lg mr-7" />
-                </div>
-                <div class="snap-center snap-always hover:cursor-pointer relative">
-                    <div class="absolute bg-[#B71F1D] w-7 h-12 z-10 m-2 mt-0 px-2.5 pb-1 rounded-tr-lg rounded-bl-lg right-8 top-0 flex flex-col items-center justify-center">
-                        <span class="text-white text-xs text-center">Top</span>
-                        <span class="text-white text-xs text-center">10</span>
-                    </div>
-                  <img src="./images/new-film/new-film-3.png" class="w-55 rounded-lg mr-7" />
-                </div>
-                <div class="snap-center snap-always hover:cursor-pointer relative">
-                    <div class="absolute bg-[#0F1E93] w-auto z-10 m-2 px-2 pb-1 rounded-full">
-                        <span class="text-white text-xs text-center">Episode Baru</span>
-                    </div>
-                  <img src="./images/new-film/new-film-4.png" class="w-55 rounded-lg mr-7" />
-                </div>
-                <div class="snap-center snap-always hover:cursor-pointer relative">
-                  <img src="./images/new-film/new-film-5.png" class="w-55 rounded-lg mr-0" />
-                </div>
-                <div class="float-end my-auto -ml-5.5 z-10 hover:cursor-pointer">
-                    <div class="right-arrow bg-gray-800 w-10 h-10 rounded-full flex justify-center">
-                        <span class="text-lg text-white my-auto">&rarr;</span>
-                    </div>
-                </div>
-            </div>
+    <!-- Section: New Film -->
+    <section class="container mx-auto px-6 mt-12">
+        <h2 class="text-2xl font-bold mb-4">Film Tranding</h2>
+        <div class="flex space-x-4 overflow-x-scroll scrollbar-hide gap-4">
+            <img src="./images/new-film/new-film-1.png" class="w-55 rounded-lg">
+            <img src="./images/new-film/new-film-2.png" class="w-55 rounded-lg">
+            <img src="./images/new-film/new-film-3.png" class="w-55 rounded-lg">
+            <img src="./images/new-film/new-film-4.png" class="w-55 rounded-lg">
+            <img src="./images/new-film/new-film-5.png" class="w-55 rounded-lg">
         </div>
     </section>
 
-    <!-- new film section -->
-
-    <hr class="border-white/50 border" />
-
-    <!-- footer -->
-
-    <footer class="my-10 px-30 h-45">
-        <div class="flex gap-6 text-white">
-            <div class="w-80">
-                <div class="m-3">
-                    <img src="./images/Logo.png" class="w-40" alt="img-logo">
-                </div>
-                <div class="m-3 text-gray-400">
-                    <h1>@2023 Chill All Rights Reserved.</h1>
-                </div>
-            </div>
-        
-            <div>
-                <h1 class="font-bold text-lg mb-3">Genre</h1>
-                <div class="grid grid-cols-4 gap-5">
-                    <div class="space-y-2">
-                        <a href="#" class="block text-gray-400 hover:text-white">Aksi</a>
-                        <a href="#" class="block text-gray-400 hover:text-white">Anak-anak</a>
-                        <a href="#" class="block text-gray-400 hover:text-white">Anime</a>
-                        <a href="#" class="block text-gray-400 hover:text-white">Britania</a>
+    <!-- Footer -->
+    <footer class="bg-[#22282A] mt-16 py-10">
+        <div class="container mx-auto">
+            <div class="flex gap-6 text-white">
+                <div class="w-80">
+                    <div class="m-3">
+                        <img src="./images/Logo.png" class="w-40" alt="img-logo">
                     </div>
-                    <div class="space-y-2">
-                        <a href="#" class="block text-gray-400 hover:text-white">Drama</a>
-                        <a href="#" class="block text-gray-400 hover:text-white">Fantasi Ilmiah & Fantasi</a>
-                        <a href="#" class="block text-gray-400 hover:text-white">Kejahatan</a>
-                        <a href="#" class="block text-gray-400 hover:text-white">KDrama</a>
-                    </div>
-                    <div class="space-y-2">
-                        <a href="#" class="block text-gray-400 hover:text-white">Komedi</a>
-                        <a href="#" class="block text-gray-400 hover:text-white">Petualangan</a>
-                        <a href="#" class="block text-gray-400 hover:text-white">Perang</a>
-                        <a href="#" class="block text-gray-400 hover:text-white">Romantis</a>
-                    </div>
-                    <div class="space-y-2">
-                        <a href="#" class="block text-gray-400 hover:text-white">Sains & Alam</a>
-                        <a href="#" class="block text-gray-400 hover:text-white">Thriller</a>
+                    <div class="m-3 text-gray-400">
+                        <h1>@2023 Chill All Rights Reserved.</h1>
                     </div>
                 </div>
-            </div>
-        </div>        
+            
+                <div>
+                    <h1 class="font-bold text-lg mb-3">Genre</h1>
+                    <div class="grid grid-cols-4 gap-5">
+                        <div class="space-y-2">
+                            <a href="#" class="block text-gray-400 hover:text-white">Aksi</a>
+                            <a href="#" class="block text-gray-400 hover:text-white">Anak-anak</a>
+                            <a href="#" class="block text-gray-400 hover:text-white">Anime</a>
+                            <a href="#" class="block text-gray-400 hover:text-white">Britania</a>
+                        </div>
+                        <div class="space-y-2">
+                            <a href="#" class="block text-gray-400 hover:text-white">Drama</a>
+                            <a href="#" class="block text-gray-400 hover:text-white">Fantasi Ilmiah & Fantasi</a>
+                            <a href="#" class="block text-gray-400 hover:text-white">Kejahatan</a>
+                            <a href="#" class="block text-gray-400 hover:text-white">KDrama</a>
+                        </div>
+                        <div class="space-y-2">
+                            <a href="#" class="block text-gray-400 hover:text-white">Komedi</a>
+                            <a href="#" class="block text-gray-400 hover:text-white">Petualangan</a>
+                            <a href="#" class="block text-gray-400 hover:text-white">Perang</a>
+                            <a href="#" class="block text-gray-400 hover:text-white">Romantis</a>
+                        </div>
+                        <div class="space-y-2">
+                            <a href="#" class="block text-gray-400 hover:text-white">Sains & Alam</a>
+                            <a href="#" class="block text-gray-400 hover:text-white">Thriller</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h1 class="font-bold text-lg mb-3">Bantuan</h1>
+                    <div class="grid">
+                        <div class="space-y-2">
+                            <a href="#" class="block text-gray-400 hover:text-white">FAQ</a>
+                            <a href="#" class="block text-gray-400 hover:text-white">Kontak Kami</a>
+                            <a href="#" class="block text-gray-400 hover:text-white">Privasi</a>
+                            <a href="#" class="block text-gray-400 hover:text-white">Syarat & Ketentuan</a>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
     </footer>
 
-    <!-- footer -->
-
-  
-
+    <script>
+        document.getElementById("menu-toggle").addEventListener("click", function() {
+            document.getElementById("mobile-menu").classList.toggle("hidden");
+        });
+    </script>
 </body>
 </html>

@@ -121,7 +121,7 @@
     <!-- Footer -->
     <footer class="bg-[#22282A] mt-16 py-10">
         <div class="container mx-auto">
-            <div class="flex gap-6 text-white">
+            <div class="lg:flex lg:gap-6 text-white">
                 <div class="w-80">
                     <div class="m-3">
                         <img src="./images/Logo.png" class="w-40" alt="img-logo">
@@ -131,9 +131,12 @@
                     </div>
                 </div>
             
-                <div>
+                <div class="max-md:m-3 max-md:flex max-md:justify-between">
                     <h1 class="font-bold text-lg mb-3">Genre</h1>
-                    <div class="grid grid-cols-4 gap-5">
+                    <div class="flex justify-center min-lg:hidden">
+                        <span>&rarr;</span>
+                    </div>
+                    <div class="grid grid-cols-4 gap-5 max-md:hidden">
                         <div class="space-y-2">
                             <a href="#" class="block text-gray-400 hover:text-white">Aksi</a>
                             <a href="#" class="block text-gray-400 hover:text-white">Anak-anak</a>
@@ -159,9 +162,12 @@
                     </div>
                 </div>
 
-                <div>
+                <div class="max-md:m-3 max-md:m-3 max-md:flex max-md:justify-between">
                     <h1 class="font-bold text-lg mb-3">Bantuan</h1>
-                    <div class="grid">
+                    <div class="flex justify-center min-lg:hidden">
+                        <span>&rarr;</span>
+                    </div>
+                    <div class="grid max-md:hidden">
                         <div class="space-y-2">
                             <a href="#" class="block text-gray-400 hover:text-white">FAQ</a>
                             <a href="#" class="block text-gray-400 hover:text-white">Kontak Kami</a>
